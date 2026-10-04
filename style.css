@@ -1,0 +1,331 @@
+/* General Styles & Background Color */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 72px 20px 30px;
+}
+
+/* Heading Styling */
+h1 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+  font-size: 2.3rem;
+}
+
+.theme-toggle-row {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  z-index: 1;
+}
+
+.theme-toggle {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #94a3b8;
+  border-radius: 999px;
+  background-color: #dbeafe;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.theme-toggle::before {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  content: "";
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle[aria-pressed="true"] {
+  background-color: #334155;
+  border-color: #64748b;
+}
+
+.theme-toggle[aria-pressed="true"]::before {
+  transform: translateX(30px);
+}
+
+.theme-icon {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.theme-icon-sun {
+  left: 8px;
+}
+
+.theme-icon-moon {
+  right: 8px;
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .theme-toggle-row {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+/* Timeline Container */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Clickable Details Card Styling */
+details.card {
+  border-radius: 8px;
+  border-left: 6px solid #3b82f6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+  overflow: hidden;
+}
+
+details.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Customized Era Card Backgrounds & Borders */
+.card-1 {
+  background-color: #ffffff;
+  border-color: #64748b;
+}
+.card-2 {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+}
+.card-3 {
+  background-color: #f0fdf4;
+  border-color: #22c55e;
+}
+.card-4 {
+  background-color: #fdf4ff;
+  border-color: #a855f7;
+}
+.card-5 {
+  background-color: #fff7ed;
+  border-color: #f97316;
+}
+
+/* Match each card's hover highlight to its accent color */
+.card-1:hover {
+  background-color: #f1f5f9;
+}
+.card-2:hover {
+  background-color: #dbeafe;
+}
+.card-3:hover {
+  background-color: #dcfce7;
+}
+.card-4:hover {
+  background-color: #fae8ff;
+}
+.card-5:hover {
+  background-color: #ffedd5;
+}
+
+/* Summary Header (Clickable area) */
+summary {
+  padding: 20px;
+  cursor: pointer;
+  list-style: none; /* Removes default arrow in modern browsers */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: none;
+}
+
+summary::-webkit-details-marker {
+  display: none; /* Hides safari disclosure triangle */
+}
+
+h2 {
+  color: #1e3a8a;
+  font-size: 1.35rem;
+  margin: 0 0 4px 0;
+}
+
+.year {
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Animated or rotated toggle indicator */
+.toggle-icon {
+  font-size: 0.8rem;
+  color: #6b7280;
+  transition: transform 0.3s ease;
+}
+
+details[open] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Expanded Formal Content Area */
+.card-content {
+  padding: 0 20px 20px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: 0;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.card-content p {
+  margin: 12px 0 0 0;
+}
+
+.example {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Importance Section */
+.importance-section {
+  max-width: 800px;
+  margin: 40px auto 20px auto;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.importance-section h2 {
+  color: #1e3a8a;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.importance-section p {
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  max-width: 800px;
+  margin: 30px auto 0 auto;
+  padding: 15px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Dark theme */
+body.dark-mode {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode .importance-section h2 {
+  color: #bfdbfe;
+}
+
+.dark-mode .card-1 {
+  background-color: #1f2937;
+  border-color: #94a3b8;
+}
+.dark-mode .card-2 {
+  background-color: #172554;
+  border-color: #60a5fa;
+}
+.dark-mode .card-3 {
+  background-color: #052e16;
+  border-color: #4ade80;
+}
+.dark-mode .card-4 {
+  background-color: #3b0764;
+  border-color: #c084fc;
+}
+.dark-mode .card-5 {
+  background-color: #431407;
+  border-color: #fb923c;
+}
+
+.dark-mode .card-1:hover {
+  background-color: #334155;
+}
+.dark-mode .card-2:hover {
+  background-color: #1e3a8a;
+}
+.dark-mode .card-3:hover {
+  background-color: #14532d;
+}
+.dark-mode .card-4:hover {
+  background-color: #581c87;
+}
+.dark-mode .card-5:hover {
+  background-color: #7c2d12;
+}
+
+.dark-mode .year,
+.dark-mode .toggle-icon,
+.dark-mode .example {
+  color: #cbd5e1;
+}
+
+.dark-mode .card-content,
+.dark-mode .importance-section p {
+  color: #e5e7eb;
+}
+
+.dark-mode .card-content {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark-mode .example {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .importance-section {
+  background-color: #1f2937;
+}
+
+.dark-mode footer {
+  color: #9ca3af;
+  border-top-color: #374151;
+}
+
+.dark-mode .theme-toggle {
+  border-color: #64748b;
+}
